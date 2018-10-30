@@ -16,6 +16,10 @@ class Sala extends Model
         return self::all();
     }
 
+    public function getSala($numero) {
+        return self::find($numero);
+    }
+
     public function addSala($req) {
         $sala = new self($req);
         try {

@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('salas','SalasController@getSalas');
+Route::get('salas/{numero}','SalasController@getSala');
 Route::post('salas','SalasController@addSala');
 Route::put('salas','SalasController@updateSala');
 Route::delete('salas/{numero}','SalasController@deleteSala');

@@ -54,4 +54,9 @@ class SalasController extends Controller
             ],400);
         }
     }
+
+    public function getSala($numero) {
+        $sala = $this->sala->getSala($numero);
+        return response()->json($sala,200);
+    }
 }
