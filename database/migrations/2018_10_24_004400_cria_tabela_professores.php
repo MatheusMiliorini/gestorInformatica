@@ -14,8 +14,8 @@ class CriaTabelaProfessores extends Migration
     public function up()
     {
         Schema::create('professores',function (Blueprint $table) {
-            $table->integer('codigo');
-            $table->primary('codigo');
+            $table->integer('codigo_professor');
+            $table->primary('codigo_professor');
 
             $table->string('nome');
             $table->string('email');

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CriaTabelaSalas extends Migration
+class CriaTabelaHorarios extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CriaTabelaSalas extends Migration
      */
     public function up()
     {
-        Schema::create('salas',function (Blueprint $table) {
-            $table->integer('sala_numero');
-            $table->primary('sala_numero');
-            $table->string('descricao');
-            $table->integer('quantidade_computadores');
-
-        });
+        Schema::create('horarios',function(Blueprint $table) {
+            $table->string('horario');
+            $table->primary('horario');
+        }); 
     }
 
     /**
@@ -29,6 +26,6 @@ class CriaTabelaSalas extends Migration
      */
     public function down()
     {
-        Schema::drop('salas');
+        Schema::drop('horarios');
     }
 }
