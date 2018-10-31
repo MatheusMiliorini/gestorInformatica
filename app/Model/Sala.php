@@ -53,6 +53,5 @@ class Sala extends Model
         } else {
             return false;
         }
-        
     }
 }

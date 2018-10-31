@@ -18,6 +18,11 @@ class SalasController extends Controller
         return response()->json($salas,200);
     }
 
+    public function getSala($numero) {
+        $sala = $this->sala->getSala($numero);
+        return response()->json($sala,200);
+    }
+
     public function addSala(Request $req) {
         $add = $this->sala->addSala($req->all());
         if ($add) {
@@ -55,8 +60,5 @@ class SalasController extends Controller
         }
     }
 
-    public function getSala($numero) {
-        $sala = $this->sala->getSala($numero);
-        return response()->json($sala,200);
-    }
+    
 }

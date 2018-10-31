@@ -22,3 +22,9 @@ Route::get('salas/{numero}','SalasController@getSala');
 Route::post('salas','SalasController@addSala');
 Route::put('salas','SalasController@updateSala');
 Route::delete('salas/{numero}','SalasController@deleteSala');
+
+Route::get('professores','ProfessoresController@getProfessores');
+Route::get('professores/{codigo}','ProfessoresController@getProfessor');
+Route::post('professores','ProfessoresController@addProfessor');
+Route::put('professores','ProfessoresController@updateProfessor');
+Route::delete('professores/{codigo}','ProfessoresController@deleteProfessor');
