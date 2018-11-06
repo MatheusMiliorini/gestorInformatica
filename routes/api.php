@@ -28,3 +28,9 @@ Route::get('professores/{codigo}','ProfessoresController@getProfessor');
 Route::post('professores','ProfessoresController@addProfessor');
 Route::put('professores','ProfessoresController@updateProfessor');
 Route::delete('professores/{codigo}','ProfessoresController@deleteProfessor');
+
+Route::get('reservas','ReservasController@getReservas');
+Route::post('reservas','ReservasController@addReserva');
+Route::get('reservas/{dia}','ReservasController@getReserva');
+Route::put('reservas/{dia}/{horario}/{sala}','ReservasController@updateReserva');
+Route::delete('reservas','ReservasController@deleteReserva');

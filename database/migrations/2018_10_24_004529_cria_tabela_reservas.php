@@ -18,7 +18,7 @@ class CriaTabelaReservas extends Migration
             $table->integer('codigo_professor');
             $table->string('horario');
             $table->integer('sala_numero');
-
+            
             $table->primary(['dia','sala_numero','horario']);
 
             $table->foreign('codigo_professor')->references('codigo_professor')->on('professores');
