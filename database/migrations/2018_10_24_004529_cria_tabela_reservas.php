@@ -23,6 +23,7 @@ class CriaTabelaReservas extends Migration
 
             $table->foreign('codigo_professor')->references('codigo_professor')->on('professores');
             $table->foreign('horario')->references('horario')->on('horarios');
+            $table->foreign('sala_numero')->references('sala_numero')->on('salas');
         });
     }
 
