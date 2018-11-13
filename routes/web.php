@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('professores',function() {
     return view ('professores');
 });
+
+Route::get('salas',function() {
+    return view ('salas');
+});
