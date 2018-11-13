@@ -38,11 +38,43 @@
                     ).append(
                         $("<td/>").html(professor.email)
                     ).append(
-                        $("<td/>").html("Alterar")
+                        // 
+                        // Aqui fica o código para alterar o professor!
+                        // 
+                        $("<td/>").html("Alterar").click(function() {
+                            var new_nome = prompt('Insira o nome do professor',professor.nome);
+                            var new_email = prompt('Insira o e-mail do professor',professor.email);
+                            if (new_nome != null && new_email != null) {
+                                // 
+                                // Faz a requisição API para alterar o professor
+                                // 
+                                $.ajax('/api/professores',{
+                                    method: "PUT",
+                                    data: {
+                                        codigo_professor: professor.codigo_professor,
+                                        nome: new_nome,
+                                        email: new_email
+                                    },
+                                    success: function(data) {
+                                        alert("Professor alterado com sucesso");
+                                        location.reload();
+                                    },
+                                    error: function(err) {
+                                        alert('Ocorreu um erro ao alterar o professor!');
+                                    }
+                                })
+                            }
+                        })
                     ).append(
+                        // 
+                        // Aqui fica o código para remover o professor!
+                        // 
                         $("<td/>").html("Remover").click(function() {
                             deletar = confirm('Tem certeza que deseja remover este professor?');
                             if (deletar) {
+                                // 
+                                // Manda o AJAX para a API remover o professor
+                                // 
                                 $.ajax(`/api/professores/${professor.codigo_professor}`,{
                                     method: "DELETE",
                                     success: function(data) {
@@ -65,11 +97,17 @@
     });
 
     $('#btnAdicionarNovo').click(function() {
+        // 
+        // Adicionar novo professor
+        //         
         codigo = prompt('Informe o código do professor');
         nome = prompt('Informe o nome do professor');
         email = prompt('Informe o e-mail do professor');
         
         if (codigo != null && nome != null  && email != null) {
+            // 
+            // Requisição API para adicionar um novo professor
+            // 
             $.ajax('/api/professores',{
                 method: 'POST',
                 data: {
@@ -84,6 +122,9 @@
                     } else {
                         alert('Falha ao adicionar! Cheque os dados novamente');
                     }
+                },
+                error: function(err) {
+                    alert('Falha ao adicionar! Cheque os dados novamente'); 
                 }
             });
         }

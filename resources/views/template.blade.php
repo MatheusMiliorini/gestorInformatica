@@ -32,7 +32,7 @@
         <div class="col-3">
             <ul class="list-group">
                 <li class="list-group-item active" style="text-align: center">Menu</li>
-                <li class="list-group-item"><i class="fas fa-chalkboard-teacher"></i> Professores</li>
+                <li class="list-group-item"><a href="/professores"><i class="fas fa-chalkboard-teacher"></i> Professores</a></li>
                 <li class="list-group-item"><i class="fas fa-door-closed"></i> Salas</li>
                 <li class="list-group-item"><i class="fas fa-book"></i> Reservas</li>
             </ul>
