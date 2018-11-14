@@ -22,3 +22,7 @@ Route::get('professores',function() {
 Route::get('salas',function() {
     return view ('salas');
 });
+
+Route::get('reservas',function() {
+    return view ('reservas');
+});

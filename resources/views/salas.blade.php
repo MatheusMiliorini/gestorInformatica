@@ -42,18 +42,18 @@
                         // Aqui fica o código para alterar o sala!
                         // 
                         $("<td/>").html("Alterar").click(function() {
-                            var new_nome = prompt('Insira o nome do sala',sala.nome);
-                            var new_email = prompt('Insira o e-mail do sala',sala.email);
-                            if (new_nome != null && new_email != null) {
+                            var new_descricao = prompt('Insira a nova descrição da sala',sala.descricao);
+                            var new_quantidade_computadores = prompt('Insira a nova quantidade de computadores',sala.quantidade_computadores);
+                            if (new_descricao != null && new_quantidade_computadores != null) {
                                 // 
                                 // Faz a requisição API para alterar o sala
                                 // 
                                 $.ajax('/api/salas',{
                                     method: "PUT",
                                     data: {
-                                        codigo_sala: sala.codigo_sala,
-                                        nome: new_nome,
-                                        email: new_email
+                                        "sala_numero": sala.sala_numero,
+                                        "descricao": new_descricao,
+                                        "quantidade_computadores": new_quantidade_computadores
                                     },
                                     success: function(data) {
                                         alert("Sala alterada com sucesso");

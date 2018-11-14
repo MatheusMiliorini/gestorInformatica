@@ -23,6 +23,15 @@
         th, td {
             text-align: center;
         }
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        a:hover {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
     </style>
 
 </head>
@@ -33,14 +42,16 @@
             <ul class="list-group">
                 <li class="list-group-item active" style="text-align: center">Menu</li>
                 <li class="list-group-item"><a href="/professores"><i class="fas fa-chalkboard-teacher"></i> Professores</a></li>
-                <li class="list-group-item"><i class="fas fa-door-closed"></i> Salas</li>
-                <li class="list-group-item"><i class="fas fa-book"></i> Reservas</li>
+                <li class="list-group-item"><a href="/salas"><i class="fas fa-door-closed"></i> Salas</a></li>
+                <li class="list-group-item"><a href="/reservas"><i class="fas fa-book"></i> Reservas</a></li>
             </ul>
         </div>
         <div class="col-8">
             @yield('meio')
         </div>
     </div>
+
+    @yield('modals')
 
 </body>
 
