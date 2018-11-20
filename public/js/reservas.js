@@ -17,7 +17,7 @@ $(document).ready(function () {
                 ).append(
                     /*
                     | Aqui fica o código para alterar o sala!
-                    */ 
+                    */
                     $("<td/>").html("Alterar").click(function () {
                         // var new_descricao = prompt('Insira a nova descrição da sala', sala.descricao);
                         // var new_quantidade_computadores = prompt('Insira a nova quantidade de computadores', sala.quantidade_computadores);
@@ -45,7 +45,7 @@ $(document).ready(function () {
                 ).append(
                     /* 
                     | Aqui fica o código para remover o sala!
-                    */ 
+                    */
                     $("<td/>").html("Remover").click(function () {
                         // deletar = confirm('Tem certeza que deseja remover esta sala?');
                         // if (deletar) {
@@ -77,9 +77,52 @@ $(document).ready(function () {
 
 
     /*
-    |   Botão de adicionar nova reserva
+    |   Botão de chamar Modal
     */
     $('#btnAdicionarNovo').click(function () {
         $("#modalAddReserva").modal();
+
+        // Preenche os dados do modal
+
+        // Professores
+        $.get('/api/professores', function (data) {
+            data.forEach(function (professor) {
+                $("#codigo_professor").append(
+                    $("<option/>").html(professor.codigo_professor).attr("value", professor.codigo_professor)
+                );
+            });
+        });
+
+        // Salas
+        $.get('/api/salas', function (data) {
+            data.forEach(function (sala) {
+                $("#sala_codigo").append(
+                    $("<option/>").html(sala.sala_numero).attr("value", sala.sala_numero)
+                );
+            });
+        });
+    });
+
+    /*
+    |   Confirmar a adição
+    */
+
+    $("#btnAdicionarReserva").click(function () {
+        $.ajax('/api/reservas', {
+            method: "POST",
+            data: {
+                "dia": $("#dia").val(),
+                "codigo_professor": $("#codigo_professor").val(),
+                "sala_numero": $("#sala_codigo").val(),
+                "horario": $("#horario").val()
+            },
+            success: function () {
+                alert("Reserva adicionada com sucesso!");
+                location.reload();
+            },
+            error: function () {
+                alert(`Erro! Verifique se já não existe uma reserva neste horário!`);
+            }
+        })
     });
 })

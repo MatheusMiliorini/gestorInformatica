@@ -44,13 +44,27 @@
                     <div class="form-group">
                         <label for="codigo_professor">Professor:</label>
                         <select class="form-control" id="codigo_professor">
-                            
+                            <!-- Preenchimento via JS -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sala_codigo">Sala</label>
+                        <select id="sala_codigo" class="form-control">
+                            <!-- Preenchimento via JS -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="horario">Horário</label>
+                        <select id="horario" class="form-control">
+                            <option value="Matutino">Matutino</option>
+                            <option value="Vespertino">Vespertino</option>
+                            <option value="Noturno">Noturno</option>
                         </select>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Adicionar</button>
+                <button type="button" class="btn btn-primary" id="btnAdicionarReserva">Adicionar</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
             </div>
         </div>
