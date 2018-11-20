@@ -31,8 +31,8 @@ class Reserva extends Model
     }
 
     public function updateReserva($req, $dia, $horario, $sala) {
-        $alterou = DB::update("UPDATE reservas SET dia=?,horario=?,sala_numero=? WHERE dia=? AND horario=? AND sala_numero=?",[
-            $req['dia'],$req['horario'],$req['sala_numero'],$dia,$horario,$sala
+        $alterou = DB::update("UPDATE reservas SET dia=?,horario=?,sala_numero=?,codigo_professor=? WHERE dia=? AND horario=? AND sala_numero=?",[
+            $req['dia'],$req['horario'],$req['sala_numero'],$req['codigo_professor'],$dia,$horario,$sala
         ]);
 
         if ($alterou == 1) {
