@@ -17,21 +17,26 @@
         crossorigin="anonymous"></script>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
 
     <style>
-        th, td {
+        th,
+        td {
             text-align: center;
         }
+
         a {
             color: black;
             text-decoration: none;
         }
+
         a:hover {
             color: black;
             text-decoration: none;
             font-weight: bold;
         }
+
     </style>
 
 </head>
@@ -41,9 +46,13 @@
         <div class="col-3">
             <ul class="list-group">
                 <li class="list-group-item active" style="text-align: center">Menu</li>
-                <li class="list-group-item"><a href="/professores"><i class="fas fa-chalkboard-teacher"></i> Professores</a></li>
+                <li class="list-group-item"><a href="/professores"><i class="fas fa-chalkboard-teacher"></i>
+                        Professores</a></li>
                 <li class="list-group-item"><a href="/salas"><i class="fas fa-door-closed"></i> Salas</a></li>
                 <li class="list-group-item"><a href="/reservas"><i class="fas fa-book"></i> Reservas</a></li>
+                <br>
+                <br>
+                <li class="list-group-item"><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
         </div>
         <div class="col-8">

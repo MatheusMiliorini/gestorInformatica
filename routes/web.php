@@ -17,12 +17,18 @@ Route::get('/', function () {
 
 Route::get('professores',function() {
     return view ('professores');
-});
+})->middleware('auth');
 
 Route::get('salas',function() {
     return view ('salas');
-});
+})->middleware('auth');
 
 Route::get('reservas',function() {
     return view ('reservas');
-});
+})->middleware('auth');
+
+Auth::routes();
+
+Route::get("/logout","Auth\LogoutController@logoutManual");
+
+Route::get('/home', 'HomeController@index')->name('home');
