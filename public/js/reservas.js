@@ -85,7 +85,7 @@ $(document).ready(function () {
                     | Aqui fica o código para remover a reserva!
                     */
                     $("<td/>").html("Remover").click(function () {
-                        deletar = confirm('Tem certeza que deseja remover esta sala?');
+                        deletar = confirm('Tem certeza que deseja remover esta reserva?');
                         if (deletar) {
                             // 
                             // Manda o AJAX para a API remover a sala
@@ -98,7 +98,7 @@ $(document).ready(function () {
                                     "sala_numero": reserva.sala_numero
                                 },
                                 success: function (data) {
-                                    alert('Sala removida com sucesso!');
+                                    alert('Reserva removida com sucesso!');
                                     location.reload();
 
                                 },
